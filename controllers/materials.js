@@ -3,4 +3,10 @@ const router = express.Router()
 
 const Material = require("../models/Material")
 
-module.exports = router; 
+router.get("/", (req, res) => {
+    Material.find({}).then(materials => {
+        res.json(materials)
+    })
+})
+
+module.exports = router;

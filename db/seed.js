@@ -1,4 +1,4 @@
-const Material = require("../models/materials");
+const Material = require("../models/Material");
 const seedData = require("./materialSeeds.json");
 
 Material.deleteMany({})
