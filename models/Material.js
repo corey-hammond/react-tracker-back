@@ -1,10 +1,12 @@
-const mongoose = require("../db/connection");
+const mongoose = require("mongoose");
 
-const materialSchema = new mongoose.Schema({
-  name: String,
+const MaterialSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    trim: true,
+    required: [true, "Please add a name for your material"]
+  },
   url: String
 });
 
-const Material = mongoose.model("Material", materialSchema);
-
-module.exports = Material;
+module.exports = mongoose.model("Material", MaterialSchema);
